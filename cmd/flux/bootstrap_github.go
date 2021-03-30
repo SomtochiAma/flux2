@@ -135,8 +135,7 @@ func bootstrapGitHubCmdRun(cmd *cobra.Command, args []string) error {
 	// Build GitHub provider
 	providerCfg := provider.Config{
 		Provider: provider.GitProviderGitHub,
-		Hostname: githubArgs.hostname,
-		Token:    ghToken,
+		Hostname: "https:// " + githubArgs.hostname,
 	}
 	providerClient, err := provider.BuildGitProvider(providerCfg)
 	if err != nil {
