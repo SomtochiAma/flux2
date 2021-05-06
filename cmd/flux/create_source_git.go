@@ -295,6 +295,7 @@ func createSourceGitCmdRun(cmd *cobra.Command, args []string) error {
 	}
 
 	logger.Waitingf("waiting for GitRepository source reconciliation")
+	fmt.Println(gitRepository.Spec.Reference.Branch)
 	if err := wait.PollImmediate(rootArgs.pollInterval, rootArgs.timeout,
 		isGitRepositoryReady(ctx, kubeClient, namespacedName, &gitRepository)); err != nil {
 		return err
