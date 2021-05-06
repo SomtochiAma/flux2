@@ -67,7 +67,7 @@
       "pluginVersion": "7.1.1",
       "targets": [
         {
-          "expr": "sum(go_info{namespace=\"$namespace\",pod_name=~\".*-controller-.*\"})",
+          "expr": "sum(go_info{namespace=\"$namespace\",pod=~\".*-controller-.*\"})",
           "interval": "",
           "legendFormat": "pods",
           "refId": "A"
@@ -130,7 +130,7 @@
       "pluginVersion": "7.1.1",
       "targets": [
         {
-          "expr": "max(workqueue_longest_running_processor_seconds{namespace=\"$namespace\",pod_name=~\".*-controller-.*\"})",
+          "expr": "max(workqueue_longest_running_processor_seconds{namespace=\"$namespace\",pod=~\".*-controller-.*\"})",
           "hide": false,
           "interval": "",
           "legendFormat": "seconds",
@@ -192,7 +192,7 @@
       "pluginVersion": "7.1.1",
       "targets": [
         {
-          "expr": "sum(go_memstats_alloc_bytes{namespace=\"$namespace\",pod_name=~\".*-controller-.*\"})",
+          "expr": "sum(go_memstats_alloc_bytes{namespace=\"$namespace\",pod=~\".*-controller-.*\"})",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
@@ -256,7 +256,7 @@
       "pluginVersion": "7.1.1",
       "targets": [
         {
-          "expr": "sum(rate(rest_client_requests_total{namespace=\"$namespace\",pod_name=~\".*-controller-.*\"}[1m]))",
+          "expr": "sum(rate(rest_client_requests_total{namespace=\"$namespace\",pod=~\".*-controller-.*\"}[1m]))",
           "interval": "",
           "legendFormat": "requests",
           "refId": "A"
@@ -545,7 +545,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(process_cpu_seconds_total{namespace=\"$namespace\",pod_name=~\".*-controller-.*\"}[1m])",
+          "expr": "rate(process_cpu_seconds_total{namespace=\"$namespace\",pod=~\".*-controller-.*\"}[1m])",
           "interval": "",
           "legendFormat": "{{kubernetes_pod_name}}",
           "refId": "A"
@@ -640,7 +640,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(go_memstats_alloc_bytes_total{namespace=\"$namespace\",pod_name=~\".*-controller-.*\"}[1m])",
+          "expr": "rate(go_memstats_alloc_bytes_total{namespace=\"$namespace\",pod=~\".*-controller-.*\"}[1m])",
           "hide": false,
           "interval": "",
           "legendFormat": "{{kubernetes_pod_name}}",

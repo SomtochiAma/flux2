@@ -49,4 +49,4 @@ scrape_configs:
   - action: replace
     source_labels:
     - __meta_kubernetes_pod_name
-    target_label: pod_name
+    target_label: pod
