@@ -67,7 +67,7 @@
       "pluginVersion": "7.1.1",
       "targets": [
         {
-          "expr": "sum(go_info{kubernetes_namespace=\"$namespace\",kubernetes_pod_name=~\".*-controller-.*\"})",
+          "expr": "sum(go_info{namespace=\"$namespace\",pod_name=~\".*-controller-.*\"})",
           "interval": "",
           "legendFormat": "pods",
           "refId": "A"
